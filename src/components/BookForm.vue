@@ -33,8 +33,8 @@
           value="borrowed"
         />
       </label>
-      Bought
       <label for="bought">
+        Bought
         <input
           label="bought"
           v-model="bookData.ownership"
