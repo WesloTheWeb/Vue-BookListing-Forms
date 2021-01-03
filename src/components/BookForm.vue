@@ -25,6 +25,7 @@
     </div>
     <div>
       <label for="borrowed">
+        Borrowed
         <input
           label="borrowed"
           v-model="bookData.ownership"
@@ -32,6 +33,7 @@
           value="borrowed"
         />
       </label>
+      Bought
       <label for="bought">
         <input
           label="bought"
