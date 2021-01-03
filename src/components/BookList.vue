@@ -1,12 +1,16 @@
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <ul>
-      <book-item v-for="book in books" :key="book.id" :book="book"></book-item>
-    </ul>
     <hr />
     <h2>Filtered Books By Ownership</h2>
     <select v-model="holding">
+      <ul>
+        <book-item
+          v-for="book in books"
+          :key="book.id"
+          :book="book"
+        ></book-item>
+      </ul>
       <option v-for="filter in filters">
         {{ filter }}
       </option>
@@ -51,12 +55,19 @@ export default {
       ],
 
       filters: ["bought", "borrowed"],
+      holding: "bought",
     };
   },
 
   components: {
     BookItem,
     BookForm,
+  },
+
+  computed: {
+    filteredBooks() {
+      return _.filter(this.books, ["ownership", this.holding]);
+    },
   },
 
   methods: {
