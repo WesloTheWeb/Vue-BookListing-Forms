@@ -11,7 +11,7 @@
           :book="book"
         ></book-item>
       </ul>
-      <option v-for="filter in filters">
+      <option v-for="filter in filteredBooks">
         {{ filter }}
       </option>
     </select>
